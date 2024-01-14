@@ -709,7 +709,7 @@ section {
   padding: 0;
 }
 
-.rn-example {
+table {
   border: 1;
   border-collapse: collapse; /* Combines borders for a cleaner look */
   width: 80%; /* Adjust as needed */
@@ -726,6 +726,13 @@ td {
 th {
   background-color: #f2f2f2;
   font-weight: bold;
+}
+
+blockquote {
+  background-color: #f2f2f2;
+  margin: 0 0 1.45rem;
+  padding: 10px;
+  width: 50%;
 }
 
 /*--------------------------------------------------------------

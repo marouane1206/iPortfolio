@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Marouane Sanhaji Portfolio - Roman Numeral Converter App</title>
+    <title>Marouane Sanhaji Portfolio - Cash Register App</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -126,14 +126,14 @@
       <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Roman Numeral Converter App</h2>
+            <h2>Cash Register App</h2>
             <ol>
               <li><a href="index.html">Home</a></li>
               <li>
                 <a
-                  href="Javascript-projects\FCC_Roman_Numeral_Converter\index.html"
+                  href="Javascript-projects\FCC_Cash_Register\index.html"
                   target="_blank"
-                  >Roman Numeral Converter App</a
+                  >Cash Register App</a
                 >
               </li>
             </ol>
@@ -151,14 +151,14 @@
                 <div class="swiper-wrapper align-items-center">
                   <div class="swiper-slide">
                     <img
-                      src="assets\img\portfolio\Roman-Numeral-Converter-imgs\Roman-numeral-converter-img.jpg"
+                      src="assets\img\portfolio\cash-register-app-imgs\Cash-register-img-1.jpg"
                       alt=""
                     />
                   </div>
 
                   <div class="swiper-slide">
                     <img
-                      src="assets\img\portfolio\Roman-Numeral-Converter-imgs\Roman-numeral-converter-img-1.jpg"
+                      src="assets\img\portfolio\cash-register-app-imgs\Cash-register-img-2.jpg"
                       alt=""
                     />
                   </div>
@@ -175,7 +175,7 @@
                   <li>
                     <strong>Github repository</strong>:
                     <a
-                      href="https://github.com/marouane1206/FCC_Roman_Numeral_Converter"
+                      href="https://github.com/marouane1206/FCC_Cash_Register"
                       target="_blank"
                       >Github</a
                     >
@@ -184,79 +184,88 @@
                   <li>
                     <strong>Project URL</strong>:
                     <a
-                      href="Javascript-projects\FCC_Roman_Numeral_Converter\index.html"
+                      href="Javascript-projects\FCC_Cash_Register\index.html"
                       target="_blank"
-                      >Roman Numeral Converter App</a
+                      >Cash Register App</a
                     >
                   </li>
                 </ul>
               </div>
               <div class="portfolio-description">
-                <h2>Roman Numeral Converter App</h2>
+                <h2>Cash Register App</h2>
                 <p>
-                  Roman numerals are based on seven symbols and can be written
-                  using various combinations to represent Arabic numerals. For
-                  example:
+                  This is a cash register app that returns change to the
+                  customer based on the price of the item, the amount of cash
+                  provided by the customer, and the amount of cash in the cash
+                  drawer. It shows different messages to the user in different
+                  scenarios, such as when the customer provides too little cash
+                  or when the cash drawer doesn't have enough to issue the
+                  correct change.
                 </p>
+                <p>
+                  The application shows different messages depending on the
+                  price of the item, the amount of cash provided by the
+                  customer, and the amount of cash in the drawer:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Status: INSUFFICIENT_FUNDS:</strong> if
+                    cash-in-drawer is less than the change due, or if it can't
+                    return the exact change.
+                  </li>
+                  <li>
+                    <strong>Status: CLOSED:</strong> if cash-in-drawer is equal
+                    to the change due.
+                  </li>
+                  <li>
+                    <strong>Status: OPEN:</strong> if cash-in-drawer is greater
+                    than the change due and it can return change, with the
+                    change due in coins and bills sorted in highest to lowest
+                    order.
+                  </li>
+                </ul>
                 <table>
                   <tr>
-                    <th>Roman numerals</th>
-                    <th>Arabic numerals</th>
+                    <th>Currency Unit</th>
+                    <th>Amount</th>
                   </tr>
                   <tr>
-                    <td>M</td>
-                    <td>1000</td>
+                    <td>Penny</td>
+                    <td>$0.01 (PENNY)</td>
                   </tr>
                   <tr>
-                    <td>CM</td>
-                    <td>900</td>
+                    <td>Nickle</td>
+                    <td>$0.05 (NICKEL)</td>
                   </tr>
                   <tr>
-                    <td>D</td>
-                    <td>500</td>
+                    <td>Dime</td>
+                    <td>$0.1 (DIME)</td>
                   </tr>
                   <tr>
-                    <td>CD</td>
-                    <td>400</td>
+                    <td>Quarter</td>
+                    <td>$0.25 (QUARTER)</td>
                   </tr>
                   <tr>
-                    <td>C</td>
-                    <td>100</td>
+                    <td>Dollar</td>
+                    <td>$0.01 (PENNY)</td>
                   </tr>
                   <tr>
-                    <td>XC</td>
-                    <td>90</td>
+                    <td>Five Dollars</td>
+                    <td>$5 (FIVE)</td>
                   </tr>
                   <tr>
-                    <td>L</td>
-                    <td>50</td>
+                    <td>Ten Dollars</td>
+                    <td>$10 (TEN)</td>
                   </tr>
                   <tr>
-                    <td>XL</td>
-                    <td>40</td>
+                    <td>Twenty Dollars</td>
+                    <td>$20 (TWENTY)</td>
                   </tr>
                   <tr>
-                    <td>X</td>
-                    <td>10</td>
-                  </tr>
-                  <tr>
-                    <td>IX</td>
-                    <td>9</td>
-                  </tr>
-                  <tr>
-                    <td>V</td>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <td>IV</td>
-                    <td>4</td>
-                  </tr>
-                  <tr>
-                    <td>I</td>
-                    <td>1</td>
+                    <td>One Hundred Dollars</td>
+                    <td>$100 (ONE HUNDRED)</td>
                   </tr>
                 </table>
-                <p>This app converts integers into Roman numerals</p>
               </div>
             </div>
           </div>
