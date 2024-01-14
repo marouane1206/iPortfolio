@@ -709,6 +709,25 @@ section {
   padding: 0;
 }
 
+.rn-example {
+  border: 1;
+  border-collapse: collapse; /* Combines borders for a cleaner look */
+  width: 80%; /* Adjust as needed */
+  margin: 0 auto; /* Centers the table horizontally */
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left; /* Adjust as desired */
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
