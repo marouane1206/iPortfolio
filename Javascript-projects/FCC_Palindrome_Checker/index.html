@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <img
+        class="planidrome-logo"
+        src="https://scontent.fcmn3-2.fna.fbcdn.net/v/t39.30808-6/299796410_149942427716545_5061364839203572261_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeHPfyW7LD9F7tOB-z97TftFnsG5ZN3KlzWewblk3cqXNUq1u5LtlfBPqxlpxhfzXJg&_nc_ohc=SrzkmKZK2rIAX_7DSjM&_nc_ht=scontent.fcmn3-2.fna&oh=00_AfDXquBP2UQEYmz3BQ7GfGxXs2uGCw1-KChmi0EfiGc9bw&oe=65969AB0"
+        alt="Planidrome Logo"
+      />
+      <h1 class="title">Is it a Palindrome?</h1>
+      <div class="palindrome-div">
+        <label for="text-input"
+          >Enter in text to check for a palindrome:
+        </label>
+        <input class="palindrome-input" id="text-input" value="" type="text" />
+        <button class="palindrome-btn" id="check-btn">Check</button>
+        <div class="results-div hidden" id="result"></div>
+      </div>
+      <div class="palindrome-definition-div">
+        <p class="palindrome-definition">
+          <span role="img" aria-label="light-bulb">&#128161;</span>
+          A <dfn>palindrome</dfn> is a word or sentence that's spelled the same
+          way both forward and backward, ignoring punctuation, case, and
+          spacing.
+        </p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
