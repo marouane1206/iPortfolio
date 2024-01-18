@@ -71,10 +71,16 @@ body #container .timer .timer-control button:active {
   font-family: Share Tech Mono, sans;
   margin-top: 15px;
   font-size: 14px;
-  color: #a50d0d;
+  color: #000000;
 }
 .author a {
   text-decoration: none;
-  color: #00264d;
+  color: #a6cbf0;
   line-height: 26px;
+}
+
+.author a:hover {
+  color: #007bff;
+  border-color: #007bff;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
