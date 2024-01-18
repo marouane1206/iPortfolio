@@ -224,7 +224,7 @@
           {
             className: "main-title",
           },
-          "25 + 5 Clock"
+          "Pomodoro Clock"
         ),
         React.createElement(e, {
           addID: "break-increment",
