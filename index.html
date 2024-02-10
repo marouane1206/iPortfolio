@@ -1425,8 +1425,15 @@
                 </div>
               </div>
             </div>    
+            
           </div>
-        </div>       
+          
+        </div> 
+        <div class="text-center mt-4">
+          <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+          <div id="pageLinks"></div>
+        </div>
+        
       </section>
       <!-- End Portfolio Section -->
 
@@ -1803,5 +1810,105 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-  </body>
+
+    <!-- Script to handle pagination-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+      var itemsPerRow = 3;
+      var rowsPerPage = 2;
+      var itemsPerPage = itemsPerRow * rowsPerPage;
+      var currentFilter = "*";
+      var currentPage = 0;
+
+      var $portfolioContainer = $("#portfolioContainer");
+      var $allItems = $(".portfolio-item");
+
+      // Initial setup to show the first page with pagination
+      showItems(currentPage, currentFilter);
+
+      // Filter click event handler
+      $("#portfolio-flters li").on("click", function () {
+        var filterValue = $(this).attr("data-filter");
+        currentPage = 0;
+        currentFilter = filterValue;
+        showItems(currentPage, currentFilter);
+      });
+
+      // Load more button click event handler
+      $("#loadMoreBtn").on("click", function () {
+        if (isLoadMoreEnabled()) {
+          currentPage++;
+          showItems(currentPage, currentFilter);
+        }
+      });
+
+      function showItems(page, filter) {
+        // Adjust container height after appending items
+        $portfolioContainer.height("auto"); // Force height calculation
+
+        // Filter items based on the current filter value
+        var filteredItems = $allItems.filter(filter);
+
+        // Calculate total number of pages
+        var totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+
+        // Adjust current page if it exceeds total pages
+        if (currentPage >= totalPages) {
+          currentPage = totalPages - 1;
+        }
+
+        // Empty the portfolio container before populating with new items
+        $portfolioContainer.empty();
+
+        // Show the items for the current page
+        var startIndex = page * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+        for (var i = startIndex; i < Math.min(endIndex, filteredItems.length); i++) {
+          $portfolioContainer.append(filteredItems[i]);
+        }
+
+        // Toggle load more button visibility based on items count
+        if (isLoadMoreEnabled(filteredItems.length, endIndex)) {
+          $("#loadMoreBtn").show();
+        } else {
+          $("#loadMoreBtn").hide();
+        }
+
+        // Scroll to the portfolio section after updating items
+        $('html, body').animate({scrollTop: $("#portfolio").offset().top}, 500);
+
+        // Update page links
+        updatePageLinks(currentPage, totalPages, filter);
+
+      }
+
+      function updatePageLinks(currentPage, totalPages, filter) {
+        // Generate page links HTML
+        var pageLinksHtml = "";
+        for (var i = 0; i < totalPages; i++) {
+          var pageNumber = i + 1;
+          var activeClass = currentPage === i ? "active" : "";
+          pageLinksHtml += '<a href="#" class="page-link ' + activeClass + '" data-page="' + i + '">' + pageNumber + '</a>';
+        }
+
+        // Update page links container with generated HTML
+        $("#pageLinks").html(pageLinksHtml);
+
+        // Attach click event handler to page links
+        $(".page-link").off("click").on("click", function (e) {
+          e.preventDefault();
+          var targetPage = parseInt($(this).data("page"));
+          currentPage = targetPage;
+          showItems(targetPage, filter);
+        });
+      }
+
+      function isLoadMoreEnabled(totalItems = $allItems.length, endIndex = currentPage * itemsPerPage) {
+        return endIndex < totalItems;
+      }
+    });
+
+    </script>
+      </body>
 </html>
